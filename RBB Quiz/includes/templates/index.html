@@ -1,0 +1,114 @@
+<div class="wrap container">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+			<div class="wrap" style="display: flex; align-items: center; justify-content: center;">
+				<form id="add_question_form" method="post"
+					  style="
+						margin: 25px 0;
+						border-radius: 8px;
+						padding: 48px 40px 36px 40px;
+						box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+						display: flex;
+						justify-content: center;
+						flex-direction: column;
+				">
+					<h1 style="text-align: center; text-decoration: underline; margin-bottom: 48px;">Enter Details For Question</h1>
+					
+					<div style="display: flex; flex-direction: column; align-items: center;	margin-bottom: 15px;">
+						<label for="question_number" style="display: block; margin-bottom: 15px;">Question Number</label>
+						<input type="number" min="0" id="question_number" name="question_number" style="
+							border: none;
+							outline: none;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" required>
+					</div>
+
+					<div style="display: flex; flex-direction: column; align-items: center;margin-bottom: 15px;">
+						<label for="question_start_time" style="display: block; margin-bottom: 15px;">Question Start Time</label>
+						<input type="number" min="0" id="start_min" name="start_min" style="
+							border: none;
+							outline: none;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" placeholder="mins" required>
+						<input type="number" min="0" id="start_sec" name="start_sec" style="
+							border: none;
+							outline: none;    				
+							margin-top: 5px;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" placeholder="sec" required>
+					</div>
+
+					<div style="display: flex; flex-direction: column; margin-bottom: 15px;align-items: center;">
+						<label for="question_end_time" style="display: block; margin-bottom: 15px;">Question End Time</label>
+						<input type="number" id="end_min" min="0" name="end_min" style="
+							border: none;
+							outline: none;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" placeholder="mins" required>
+						<input type="number" id="end_sec" min="0" name="end_sec" style="
+							border: none;
+							outline: none;
+							margin-top: 5px;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" placeholder="sec" required>
+					</div>
+					
+					<div style="display: flex; flex-direction: column; align-items: center; margin-bottom: 15px;">
+						<label for="question_score" style="display: block; margin-bottom: 15px;">Question Score</label>
+						<input type="number" id="question_score" min="0" name="question_score" style="
+							border: none;
+							outline: none;
+							box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15);
+							padding: 12px 20px;
+							border-radius: 100px;
+						" required>
+					</div>
+
+					<input type="hidden" name="number_of_answers" id="number_of_answers" value="3">
+
+					<div>
+						<label style="display: block; margin-bottom: 15px; width: 100%; text-align: center;">Answer to the question</label>
+						<div style="width: 100%; display: flex; justify-content: center; align-items: center;">					
+							<div style="padding: 0 20px">
+								<label for="answerA">A</label>
+								<input type="radio" id="answerA" name="answer" value="A">
+							</div>
+
+							<div style="padding: 0 20px">
+								<label for="answerB">B</label>
+								<input type="radio" id="answerB" name="answer" value="B">
+							</div>
+
+							<div style="padding: 0 20px">
+								<label for="answerC">C</label>
+								<input type="radio" id="answerC" name="answer" value="C">
+							</div>
+						</div>
+					</div>
+					
+					<input type="hidden" name="action" value="submit_question_form">
+
+					<div style="display: block; margin-top: 1em; margin-bottom: 0.5em;margin-left: auto; margin-right: auto; border-style: inset; width: 100%; border-width: 1px"></div>
+					
+					<input type="submit" name="btnSubmit" value="Submit Question" class="btn btn-primary">
+					
+					<div style="display: block; margin-top: 1em; margin-bottom: 0.5em;margin-left: auto; margin-right: auto; border-style: inset; width: 100%; border-width: 1px"></div>
+					
+					<div class="msgDiv"></div>
+				</form>
+			</div>
+        </main>
+    </div>
+</div>
+
+<script src="../../../web/app/plugins/mpat-plugins/includes/scripts/add-question.js"></script>
