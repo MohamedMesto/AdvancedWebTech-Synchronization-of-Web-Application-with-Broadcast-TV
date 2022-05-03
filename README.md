@@ -1,6 +1,6 @@
 # Advanced-Web-Technologies-Project
+# Synchronization of Web Application with Broadcast TV
 
-Synchronization of Web Application with Broadcast TV
 by FRAUNHOFER INSTITUTE FOR OPEN COMMUNICATION SYSTEMS (Fokus) Institute.
 
 Abstract—HbbTV ( Hybrid broadcast broadband TV) is the
@@ -31,7 +31,7 @@ Index Terms—component, formatting, style, styling, insert
 
 ## Contributors
 - Mohamed Mesto, m.mesto@campus.tu-berlin.de  , Mohamedmesto111@gmail.com
-- - Mustafa Darkshly, m.darkshly@campus.tu-berlin.de
+- Mustafa Darkshly, m.darkshly@campus.tu-berlin.de
 - Kafil Hussain, kafil.hussain@campus.tu-berlin.de
 - Malik Haroon Akbar, m.akbar@campus.tu-berlin.de
 
