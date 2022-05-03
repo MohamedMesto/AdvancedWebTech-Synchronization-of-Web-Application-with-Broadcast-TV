@@ -1,4 +1,4 @@
-# Advanced Web Technologies Project
+# Advanced Web Technologies
 # Synchronization of Web Application with Broadcast TV
 
 by FRAUNHOFER INSTITUTE FOR OPEN COMMUNICATION SYSTEMS (Fokus) Institute.
