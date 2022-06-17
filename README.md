@@ -22,8 +22,6 @@
 </table>
 
 
-by FRAUNHOFER INSTITUTE FOR OPEN COMMUNICATION SYSTEMS (Fokus) Institute.
-
 Abstract—HbbTV ( Hybrid broadcast broadband TV) is the
 standard for the broadcast and broadband services, which also
 provides customers to interact with their TV. The latest version of
