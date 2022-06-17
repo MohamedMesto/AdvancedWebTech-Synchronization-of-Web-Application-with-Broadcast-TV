@@ -51,10 +51,10 @@ Index Terms—component, formatting, style, styling, insert
 
  
 ## Tech
-HbbTV 2.0, JS, PHP, CSS, MqSQL and Wordpress
+HbbTV 2.0, JS, PHP, CSS, MqSQL, Wordpress, Draw.io and Latex
 
 ## Figures
-the figures are created via Draw.io
+the figures are created via 
 
 ## Contributors
 - Mohamed Mesto, m.mesto@campus.tu-berlin.de  , Mohamedmesto111@gmail.com
