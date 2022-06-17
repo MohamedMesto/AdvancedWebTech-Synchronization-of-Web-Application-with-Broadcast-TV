@@ -1,6 +1,3 @@
-
-
-
 <table border=0>
 <tr border=0>
 <td> <img align="left"  alt="Mohamed Mesto" width="100px" height='60px' src="https://www.ods.tu-berlin.de/fileadmin/Aperto_design/img/logo_01.gif"/> </td>
@@ -23,8 +20,7 @@
     <td> </td>
 </tr>
 </table>
-# 
-# Synchronization of Web Application with Broadcast TV
+
 
 by FRAUNHOFER INSTITUTE FOR OPEN COMMUNICATION SYSTEMS (Fokus) Institute.
 
@@ -71,4 +67,6 @@ the figures are created via Draw.io
 License under the [MIT License] (LICENSE).
 
 
-![](AWT2022VideoStreamingMixerLibrary.jpg)
+![](Images/AWT2019-1.jpg)
+![](Images/AWT2019-2.jpg)
+![](Images/AWT2019-3.jpg)
