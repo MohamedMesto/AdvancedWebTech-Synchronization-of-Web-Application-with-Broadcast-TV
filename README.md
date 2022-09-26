@@ -69,4 +69,4 @@ License under the [MIT License] (LICENSE).
 
 ![](Images/AWT2019-2.jpg)
 ![](Images/AWT2019-3.jpg)
-![](Images/AWT2019-4.jpg)
+![](Images/AWT2019-4.png)
