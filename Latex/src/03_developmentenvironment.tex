@@ -8,46 +8,99 @@ and different web browser.
 
 
 \subsection{Installation Process for Windows OS}
+ Download XAMPP for Windows Operating system.
+
  
- 
- 1) Download XAMPP for Windows Operating system.
-2) Download MPAT-Core from GitHub link
+\begin{enumerate}
+
+ \item Download MPAT-Core from GitHub link
 (https://github.com/MPAT-eu).
-3) Install XAMPP by running the .exe file.
-4) Extract MPAT-Core to xampp/htdocs/.
-5) Run XAMPP and start Apache and MySQL.
-6) Start XAMPP Shell.
-7) Navigate to MPAT-core-master directory.
-8) Run ”php composer.phar install” command.
-9) Open localhost/phpmyadmin/ in web browser and create
+ \item Install XAMPP by running the .exe file.
+\item Extract MPAT-Core to xampp/htdocs/.
+\item Run XAMPP and start Apache and MySQL.
+\item Start XAMPP Shell.
+\item Navigate to MPAT-core-master directory.
+\item Run ”php composer.phar install” command.
+\item Open localhost/phpmyadmin/ in web browser and create
 wordpress database.
-10) Change .env.example to .env file in MPAT-core-master
+\item Change .env.example to .env file in MPAT-core-master
 directory then change its content accordingly and Generate
 key from https://roots.io/salts.html and add them
 in .env file.
-11) Open localhost/MPAT-core-master/web/ (if this links
+\item Open localhost/MPAT-core-master/web/ (if this links
 open then everything is good).
-12) Now open sub-directory wp/wp-admin inside ’web’
+\item Now open sub-directory wp/wp-admin inside ’web’
 directory (localhost/MPAT-core-master/web/wp/wpadmin/).
 It will ask you to install wordpress.
-13) After that login to Wordpress
-14) Then goto Plugins and activate all plugins and update
+\item After that login to Wordpress
+\item Then goto Plugins and activate all plugins and update
 them if needed.
-15) For accessing the timeline feature of MPAT, activate
+\item For accessing the timeline feature of MPAT, activate
 multisite on WordPress.
+\end{enumerate}
  
   
  
 \subsection{Installation Process for Ubuntu}
 
-This paper \cite{measures} examines the state of the art in the handling of demuxed audio and video tracks in predominant Adaptive Bitrate Streaming protocols (DASH and HLS). They found several limitations in existing practices both in the protocols and the player implementations, which can cause undesirable behaviors such as stalls, selection of potentially undesirable combinations such as very low-quality video with very high-quality audio, etc. Our work had to handle streams with separate audio tracks, having to join both video and audio segments in separate manifest files without consideration on how well is the quality of experience; this matter will be covered in the Evaluation and Results section.
+\begin{enumerate}
+ 
+\item Download installation package for Ubuntu Operating
+system.
+\item Download MPAT-Core from GitHub link
+(https://github.com/MPAT-eu)
+\item Make sure the installation package is executable.
+\item Navigate to the downloaded package and change the
+mode,e.g.
+chmod 755 xampp-linux-x64-7.2.10-0-installer.run
+\item Confirm the execute permission by
+ls -l xampp-linux-x64-7.2.10-0-installer.run
+\item Launch the Setup Wizard by
+sudo ./[package name] and finish the installation
+\item Extract MPAT-Core to xampp/htdocs/
+\item Start LAMPP by
+sudo /opt/lampp/lampp start
+\item Navigate to MPAT-core-master directory
+\item Run ”php composer.phar install” command
+\item Open localhost/phpmyadmin/ in web browser and create
+wordpress database.
+\item Change .env.example to .env file in MPAT-core-master
+directory then change its content accordingly and Generate
+key from https://roots.io/salts.html and add them
+in .env file
+\item Open localhost/MPAT-core-master/web/ (if this links
+open then everything is good)
+\item Now open sub-directory wp/wp-admin inside ’web’
+directory (localhost/MPAT-core-master/web/wp/wpadmin/).
+It will ask you to install wordpress.
+\item After that login to Wordpress
+\item Then go to Plugins and activate all plugins and update
+them if needed.
+\item For accessing the timeline feature of MPAT, activate
+multisite on WordPress.
+\end{enumerate}
 
-\subsection{Increasing ad personalization with server-side ad insertion}
 
-This paper \cite{ssai} examines the architectures required to achieve server-side advertisement insertion so that multiple concurrent advertising manifests can be delivered in a timely fashion. Cloud and cloud-assisted software solutions were required. 
 
-When a video plays, the player makes the necessary calls to obtain the next chunk of content to be shown from the manifest. In a well-designed player, where the segments come from the same source, there should be a seamless display and a reasonable quality of experience. What is required, then, is a method of inserting targeted advertising into individual delivery paths that provides clear metrics, protects against advertising blocking or skipping, and maintains a consistent quality of experience for the consumer. The solution lies in upstream insertion of the advertising so that a continuous stream arrives at the consumer device eliminating any possibility of discrimination between content and commercials, and avoiding freezes, black screens, and spinning wheels.
 
-In \cite{ssai}, is shown an HLS example manifest that uses the "\#EXT-X-CUE-OUT" manifest declaration, which is the signal to the player that this is a commercial break. When using client-side advertisement insertion, the player will have some sort of logic to initiate a call to get the advertisements. The player will probably download ads to play within the time between the CUE markers. During the "\#EXT-X-CUE" breaks, it is clear that some calls are not to the content provider but advertising servers. By moving the advertising insertion to the server side and within the packaging process, the content provider address and the advertisement server provider address differences are eliminated and made to look the same from a manifest perspective. There is no need to put the \#EXT-X-CUE tags anymore as the ad insertion or replacement is already done. The client's content and the ads would be hosted at the same address. 
 
-This eliminates the prospect of skipping the advertising, a consistent stream of content is also presented in the same resolution, codec, and encryption, which maintains the quality of experience. Finally, a single contiguous stream is sent to the client.
+
+\subsection{Browser Setting}
+
+MPAT can be used on almost all the browsers, where
+WordPress is supported. Any standards Internet browser like
+Google Chrome, Mozilla Firefox or MS Internet Explorer is
+required to use the MPAT editor tool and to start creating
+HbbTV applications.
+In order to preview the HbbTV applications , Mozilla
+Firefox v51.0.1 as well as the Firefox Add-on FireHbbTV
+v1.3.20 are needed. This Add-on must be switched on in order
+to preview the HbbTV application and must be switched off
+in order to edit the application with MPAT.
+To achieve a better workflow and efficient development
+environment, we configured FireHbbTV only on FireFox.
+Google Chrome will only be used for the development and it
+will not be having FireHbbTV addon. In case if the FireHbbTV
+addon will be active on the browser, where well be working.
+Then well always need to stop FireHbbTV addon, because it
+changes the standard display of browser [2].

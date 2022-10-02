@@ -1,174 +1,214 @@
 \section{\textbf{Our Approach}}\label{sec:main}
 \subsection{ Proposed Solution}
 
-This project was developed in Javascript programming language to be able to use hls-parse js library features, with Node JS and npm as deployment and distribution tools. 
+Based on the demand of the project we decided to use
+Plug-in feature of WordPress since there were so many other
+options like using the timeline feature of MPAT or developing
+an application by using Multi-sites and a separate database.
+etc. WordPress plugin is a piece of software written in PHP
+that contains different functions and features to extend the
+functionality of the WordPress environment, and it does not
+change anything in the core functionality of WordPress. Plugins
+functionality can be very elastic, and it can be simple like
+just printing Hello World, or complex as plugins like Yoast
+SEO for WP plugin.
 
-We parsed the HLS manifests from the multiple input video streams using the hls-parse JS library. Having the respective object representations for further manipulation and handling, we implemented two algorithms that identify the matching representations based on resolution, shown in Figure \ref{fig:strategies}.
-
- \begin{itemize}
-
-     \item Strategy 1: The first strategy consists of identifying which video streams have matching representations against the first element of the input array. One video stream might have more resolutions than the first input so those would be left out. As can be seen in Figure \ref{fig:strategies}, video stream B does not have the green resolution, that is present in A, so this stream is not present in the final output.
-
-     \item  Strategy 2: The second strategy consists of finding an intersection between the variant playlists in regards to their resolution. In Figure \ref{fig:strategies} we can see that only two resolutions are common between all the input streams so an intersection has been found. Two variant playlists should be in the output manifest. Each one will include all concatenated segments from all inputs matching the respective representation.
+\subsection{Technologies we used}
+ We used the following technologies for developing out plugin
+in order to complete the project.
 
 
- \end{itemize}
+\begin{enumerate}
+  \item PHP: 
+In the plugin development, the first skill you need is PHP
+skills. There are some basic protocols one has to follow in the
+plug-in like, the name of the plugin, plugin URI, Description
+of the plugin, version of the plugin, Authors URI, name of the
+authors and last the license. PHP functions and some hooks
+for the attachment of functions, to maintain the functionality
+of plugin or to attach different function together.
+ \item avascript: 
+A scripting language which is commonly used in client side.
+It is used to provide for a more user-friendly experience such
+as dynamically updating web pages.
+In the context of our project, we used javascript for different
+purposes such as, triggering different events like, buttons,
+When to appear in the screen and which time of the video,
+adding the score of the user, updating the score.
+ \item CSS: 
+CSS is the language that defines the design of HTML
+documents. In our project, we used it for designing all the
+components on video those will appear on the user side like
+timing, score, and options to select answers. The color of the
+buttons when they appear in the screen and the color will
+change once the user selects the answer. On the admin panel,
+the design of the input form.
+ \item  HTML: 
+A standard markup language, HTML (Hypertext Markup
+Language), is used for developing the web pages and web
+applications. In HTML we use different other languages like
+CSS, Javascript for different purposes like the design, style of
+the text, color and so many other features.
+Currently HbbTv 2.0 is the latest version which supports
+HTML5, and older versions HbbTV 1.0 and 1.5 supports
+HTML 4. So, while the development of MPAT plugin, we
+used HTML5.
+\end{enumerate}
+
+
+\subsection{Plugin Installation and Activation}
+
+
+MPAT plugin Installation is the same as other simple
+WordPress plugins. The only difference will be we need to
+copy the plugin file in different folders. MPAT RBB-Quiz
+plugin resides on the following paths.
+
+
+\begin{enumerate}
+\item Linux: /opt/lampp/htdocs/MPAT-coremaster/
+web/app/plugins/mpat-plugins
+\item Windows OS : C:/Xamp/htdocs/MPAT-coremaster/
+web/app/plugins/mpat-plugins
+\end{enumerate}
+
+When plugin files are placed in the respective directories,
+then they will show in plugin names (RBB-Quiz) in the plugin
+list of WordPress. Then Well just need to click the activate
+button to start its functionality. Following use case diagram
+shows how administrator and TV viewer will interact with the
+plugin.
+
+
+When RBB-Quiz plugin is activated, in WordPress it creates
+a page named as RBB-Quiz-Page, Which will be linked with
+the layout created by admin manually, and administrator will
+also be responsible for adding video source link in components
+settings.
+
+
+
  
- For both strategies, the final output should be the master HLS manifest of a playlist that includes the concatenated segments from all inputs matching the respective representation. Using the hls-parser library we will create and manipulate this final HLS master manifest.
 
- 
+
+
+
+
+
+ Figure \ref{fig:Use-case-Diagram}.
+
 \begin{figure}[!ht]
+	\centering
+\includegraphics[scale=0.6]{figures/Use-case-Diagram.png}\\
+	\caption{Use case Diagram }
+	\label{fig:Use-case-Diagram}
+\end{figure}
+ 
+After that administrator’s responsibility will be to login to
+admin panel and fill the details about questions. In the admin
+panel, first of all, the admin will enter the question number,
+which is just a sequence number of question in the database.
+It has no effect on triggering events on screen. Secondly, the
+admin will enter the start time of the question according to
+the video, the end time of the question. These timestamps
+will be responsible for triggering events on the screen such
+as showing buttons to submit answers and these buttons will
+disappear when question time expires. In the last section of this
+form, the admin will enter the score for and correct answer for
+that question. This information will verify the correct answer
+to the question and updates the score accordingly.
+ 
+    
+   
 
-\centering
-\includegraphics[scale=0.70]{figures/strategies.png}
-\caption{Strategies}
-\label{fig:strategies}
+ Figure \ref{fig:Admin-panel}.
+
+\begin{figure}[!ht]
+	\centering
+\includegraphics[scale=0.6]{figures/Admin-panel.png}\\
+	\caption{Admin Panel}
+	\label{fig:Admin-panel}
+\end{figure} 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+
+\subsection{TV User Interface}
+
+When the video starts streaming, the HbbTV plugin will
+populate the TV screen with different components. Following
+are the components with their details: Figure \ref{fig:User-interface}.
+
+
+    
+    \begin{itemize}
+       \item Timer Component
+\item Score Component
+\item Buttons to Submit Answer
+    \end{itemize}
+
+
+
+
+\begin{figure}[!ht]
+	\centering
+\includegraphics[scale=0.6]{figures/User-interface.png}\\
+	\caption{User interface}
+	\label{fig:User-interface}
 \end{figure}
 
-In figure \ref{fig:proposal} we can see the diagram flow that shows how the multiple video streams manifest as input are going to be parsed through the hls-parse library to obtain each object representation, so we can handle and manipulate its data. Then, the two strategies will be applied to this set of objects to find the matching and compatible representations to output a final master playlist using, again, the hls-parse library to create/write the master manifest.
 
-\begin{figure}[!ht]
 
-\centering
-\includegraphics[scale=0.31]{figures/proposal.png}
-\caption{Proposed Solution}
-\label{fig:proposal}
-\end{figure}
 
-\subsection{HLS Manifest Parsing}
+ \begin{enumerate}
+ \item  Timer Component: 
+ 
+ Timer component will show the current time on the video,
+timer value will also be used to show answer components on
+the score. When the time on time counter will be the same as
+the time mentioned as the start time of question. Then exactly
+on that time new components will appear on screen, where the
+user can make the decision and selects the answer by the given
+time for the question by the administrator of the show. For
+each question, there is a start time and end time. In between
+that time user has to make the decision and select any of the
+possible answers.
+ \item  Score Component: 
+ 
+ Score component will always be there on the screen, but
+it will update scores only when the video reaches at the end
+time of each question. Total scores will be updated after every
+question. The total core is dependent on the weights that the
+administrator provides for each answer. The scoring algorithm
+simply counts the weight of submitted answer and then adds
+it to the current score value. If the user does not select any
+answer the score will be zero. Once the user selects the answer
+it will be locked and the right answer will appear after the
+expiry of question time.
+ \item  Buttons to Submit Answer:
+ 
+ When TV host will announce the question in the Jede
+Antwort zhlt, on the users screen three clickable buttons will
+appear and these buttons will stay on screen until the question
+time expires. User will only be able to select the answer only
+once, and it will be locked until the right answer will be
+revealed in the show. When the answer will be revealed the
+player’s score will be updated in the core component.
+Once the user selects the answer the color of the selected
+answer will be changed and its locked. User will not be able
+to change the answer once it is selected.
+\end{enumerate}
 
-Each strategy receives as a parameter an array made of Strings consisting of different video stream URLs that are already .m3u8 files. To obtain the manifest text from the URLs, we fetched the data using the \Verb|fetch()| JavaScript function, which makes a GET request to the URL to obtain the text data returned. Then, we parsed the text into object representation using the hls-parser library to access the playlist as a JS object.
-
-Hls-parser provides synchronous functions to read/write HLS playlists \cite{hlsparser}. With the method \Verb|HLS.parse(string)|, we obtained the Master playlist manifest from each URL. The object representation of a Master Playlist, its Variants, and audio tracks, look like this (simplified):
-
-\begin{lstlisting}
-
-MasterPlaylist {
-  type: 'playlist',
-  isMasterPlaylist: true,
-  uri: 'https://playertest.longtailvideo.com/adaptive/elephants_dream_v4/redundant.m3u8',
-  version: 3,
-  source: '#EXTM3U\n' +
-    '#EXT-X-MEDIA:TYPE=AUDIO,GROUP-ID="aac",LANGUAGE="en",NAME="English",DEFAULT=YES,URI="media/b160000-english.m3u8"\n' +
-    '#EXT-X-STREAM-INF:BANDWIDTH=2962000,RESOLUTION=1280x720,AUDIO="aac"\n' +
-    'media/b2962000-video.m3u8\n' +
-    '#EXT-X-STREAM-INF:BANDWIDTH=1427000,RESOLUTION=768x432,AUDIO="aac"\n' +
-    'media/b1427000-video.m3u8\n',
-  variants: [
-    Variant {
-    uri: 'media_b/b2962000-video.m3u8',
-    bandwidth: 2962000,
-    resolution: { width: 1280, height: 720 },
-    audio: [ 
-    Rendition {
-      type: 'AUDIO',
-      uri: 'media/b160000-english.m3u8',
-      groupId: 'aac',
-      language: 'en',
-      assocLanguage: undefined,
-      name: 'English',
-      isDefault: true,
-      }
-    ]
-  },
-    Variant {
-    uri: 'media_b/b1427000-video.m3u8',
-    bandwidth: 1427000,
-    resolution: { width: 768, height: 432 },
-    audio: [ 
-    Rendition {
-      type: 'AUDIO',
-      uri: 'media/b160000-english.m3u8',
-      groupId: 'aac',
-      language: 'en',
-      assocLanguage: undefined,
-      name: 'English',
-      isDefault: true,
-      }
-    ]
-  }
-  ],
-}
-
-\end{lstlisting}
-
-The resolution attribute from the Variant object will be useful in finding the matching representations for each strategy. The bandwidth attribute helped us choose which representation to include when two shared the same resolution but with different bandwidths, taking the highest one. The different Uri attributes are concatenated at the end of the original address of the master playlist to later fetch the text data inside those .m3u8 files for Variant and Audio playlists.
-
-Having the complete object representation, we saved the different Variants from each URL into a Dictionary, where the key is the index of the URL in the input URLs array and has as value an array made of the variants objects from that stream. We also saved the object representation from all the playlists in another array for later use.
-
-\subsection{Strategy 1}
-
-We need as a final output a master playlist that contains the same representations available from the first video stream of the input array. So, if we have as input array [urlA, urlB, urlC], where stream A has 360p  and 720p resolutions, stream B has 360p, 480p and 720p, and stream C has only 360p. The only stream that matched Stream A's representations was Stream B, so the final output will have Streams A and B content with 360p and 720 representations. 
-
-We extracted the resolutions of the first element of the array from the variants dictionary mentioned before. These are our needed resolutions, then we will iterate over the other streams and for each, we will obtain its variants. We will find the needed resolution in all the representations available for every other stream. We will save the object representation of the matching streams into an array for later use.
-
-\subsection{Strategy 2}
-
-For strategy 2 we have as output a master playlist that contains the representations resulting from the intersection, if one exists, of all the streams variants. From the variants dictionary, we get the representations for each stream, making an array of arrays. Then, for every stream representation, we check if it exists in every other stream variant. The number of times a representation appears in the other streams to be in the intersection should equal the number of video streams minus one. If no representation is present in every stream, the intersection is empty.
-
-So, if we have as input array [urlA, urlB, urlC], where stream A has 720p and 360p resolutions, stream B has 480p and 360p and stream C has only 360p, an intersection exists and the Master Playlist will consist of only the 360p representation of Stream A, B and C contents.
-
-\subsection{Output final master manifest}
-
-After implementing both strategies, we have as a result an array with the compatible streams and an array with the resolutions that matched.
-Having the streams resulting from the filtering of the strategies, we have to obtain the variants for each matching resolution.
-
-With the help of a dictionary with key the resolution as string representation in 00x00 format, we gather all the variants that matched it according to the strategy. A stream can have multiple variants with the same resolution but with different bandwidths. To remove these duplicates, we chose the variant with the maximum bandwidth value.
-
-For each matching resolution, we fetch the media playlist of all the variants to obtain their segments which will be joined in an array to create a new Media Playlist object that will represent the correspondent Variant representation in the final master manifest. We convert this new Media Playlist object into string representation in a .m3u8 file identified with the corresponding resolution using \Verb|HLS.stringify()| method.
-
-\begin{lstlisting}
-let newPlaylist = new MediaPlaylist({
-    segments: segments,
-    endlist: true,
-    targetDuration: maxDuration,
-    version: maxVersion
-})
-const content = HLS.stringify(newPlaylist)
-fs.writeFile(resolution + '.m3u8', content)
-\end{lstlisting}
-
-Then, we create a new Variant object that has as Uri attribute the filename of the media playlist m3u8 file mentioned before, its resolution, and bandwidth attributes, which is the maximum of all the variants joined. This new Variant object will be saved in the variants dictionary mentioned before in the corresponding resolution key as 00x00 format.
-
-\begin{lstlisting}
-let newVariant = new Variant({
-    uri: resolution + '.m3u8',
-    resolution: res,
-    bandwidth: maxBand
-})
-repDict[resolution] = newVariant
-\end{lstlisting}
-
-If the matching streams have audio tracks, these will also be fetched from the correspondent .m3u8 files of the audio media playlist. Each audio segment will be saved in an array, accumulating audio from all the streams belonging to a Variant. The attribute audio for the new Variant object will have as value this audio segments array. At the same time, a new audio.m3u8 file is written which will include the audio for the final resulting stream. 
-\begin{lstlisting}
-let newAudioPlaylist = new MediaPlaylist({
-    segments: audioSegments,
-    endlist: true,
-    targetDuration: maxAudioDuration,
-    version: maxAudioVersion
-})
-const content = HLS.stringify(newAudioPlaylist)
-fs.writeFile('audio.m3u8', content)
-let audio = new Rendition({
-    type: 'AUDIO',
-    uri: 'audio.m3u8',
-    groupId: 'audio',
-    name: 'audio'
-})
-newVariant.audio = [audio]
-\end{lstlisting}
-Finally, we create a new MasterPlaylist object joining all the variants in the dictionary in an array to assign the variants attribute to the master playlist. We convert this playlist into string representation too and write it on a master.m3u8 file.
-
-\begin{lstlisting}
-let masterPlaylist = new MasterPlaylist({
-    variants: variants
-})
-HLS.stringify(masterPlaylist)
-fs.writeFile('master.m3u8', content)
-\end{lstlisting}
-
-\subsection{Dependency Library}
-
-The final requirement for this project was to deploy it as a dependency for other Node JS applications to use.
-
-We created a npm package \cite{npm}, which has in the file utils.js two methods: \Verb|algorithmA()| and \Verb|algorithmB()|, where both receive as parameters an array of string URLs, along with other utility functions like \Verb|joinSegments()|, \Verb|makeRepresentationsDict()|, \Verb|createMasterPlaylist()|. These two methods, \Verb|algorithmA()| and \Verb|algorithmB()|, are exported in the index.js of the package from which an external Node JS app can import them as a dependency.
+ 
