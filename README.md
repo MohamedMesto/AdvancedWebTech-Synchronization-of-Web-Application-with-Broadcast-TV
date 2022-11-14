@@ -54,6 +54,13 @@ HbbTV 2.0, JS, PHP, CSS, MqSQL, Wordpress, Draw.io and Latex
 ## Figures
 the figures are created via 
 
+## Evaluation Grade from Quality and Usability Lab
+1.7 for the Project
+2.3 with the AWT Lectures's Exam
+
+![](Images/AWT2019-Note2.3.png)
+
+
 ## Contributors
 - Mohamed Mesto, m.mesto@campus.tu-berlin.de  , Mohamedmesto111@gmail.com
 - Mustafa Darkshly, m.darkshly@campus.tu-berlin.de
